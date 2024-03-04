@@ -1,5 +1,9 @@
 ﻿<?php
 
+//Error Reporting
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
 // Replace with your Discord Webhook URL
 $webhookUrl = 'https://discord.com/api/webhooks/1214230295700705331/N7GkglK01htCOg0M0iOyuQ9ae6ghQRJPxtLAbm6naiDwP5I-fWMKvh7pj-lfiP5dsw1F';
 
