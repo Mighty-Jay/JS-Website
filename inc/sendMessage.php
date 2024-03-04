@@ -38,7 +38,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$response = curl_exec($ch);
 		curl_close($ch);
   
-		  if ($ch) { echo "OK"; }
+		if (curl_errorno($ch)) {
+			echo 'Error: ' . curl_error($ch);
+		} else {
+			echo "Message sent successfully.";
+		}
+		
 		else { echo "Something went wrong. Please try again."; }
 		  
 	  } # end if - no validation error
