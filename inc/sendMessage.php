@@ -32,8 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $response = curl_exec($ch);
     curl_close($ch);
 
-    // Redirect to success page
-    header("Location: index.html?success=1");
+	//Finish code. 
     exit;
 }
 
