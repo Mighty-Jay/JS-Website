@@ -22,18 +22,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'content' => "New message from $name ($email):\n\n$subject\n\n$contact_message",
     ];
 
-    // Send the message to the Webhook
-    $ch = curl_init($webhookUrl);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $message);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $response = curl_exec($ch);
-    curl_close($ch);
+	if (!$error) {
 
-	//Finish code. 
-    exit;
+		// Send the message to the Webhook
+		$ch = curl_init($webhookUrl);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $message);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$response = curl_exec($ch);
+		curl_close($ch);
+  
+		  if ($ch) { echo "OK"; }
+		else { echo "Something went wrong. Please try again."; }
+		  
+	  } # end if - no validation error
+
+	else {
+
+		$response = (isset($error['name'])) ? $error['name'] . "<br /> \n" : null;
+		$response .= (isset($error['email'])) ? $error['email'] . "<br /> \n" : null;
+		$response .= (isset($error['message'])) ? $error['message'] . "<br />" : null;
+		
+		echo $response;
+
+	} # end if - there was a validation error
 }
 
 ?>
