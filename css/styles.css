@@ -24,7 +24,7 @@
     --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --gradient-4: linear-gradient(135deg, #ff00d0 0%, #0a74ff 100%);
     --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -191,7 +191,7 @@ body {
 .shape-2 {
     width: 400px;
     height: 400px;
-    background: linear-gradient(135deg, #f093fb, #f5576c);
+    background: linear-gradient(135deg, #0062ff, #ffc907);
     bottom: -10%;
     left: -5%;
     animation-delay: 5s;
@@ -250,14 +250,14 @@ body {
 }
 
 .gradient-text {
-    background: var(--gradient-1);
+    background: var(--gradient-3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .gradient-text-alt {
-    background: var(--gradient-2);
+    background: var(--gradient-4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
