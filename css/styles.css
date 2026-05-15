@@ -445,6 +445,14 @@ section {
     line-height: 1.7;
 }
 
+.cv-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
 /* Skills Section */
 .skills {
     background: var(--bg-light);
