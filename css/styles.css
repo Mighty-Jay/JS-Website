@@ -699,6 +699,7 @@ section {
 .gradient-2 { background: var(--gradient-2); }
 .gradient-3 { background: var(--gradient-3); }
 .gradient-4 { background: var(--gradient-4); }
+.gradient-5 { background: var(--gradient-5); }
 
 .project-content {
     padding: 2rem;
@@ -766,9 +767,55 @@ section {
     gap: 1rem;
 }
 
+/* CV Section */
+.cv {
+    background: var(--bg-white);
+}
+
+.cv-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--bg-light);
+    padding: 3.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.cv-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.cv-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cv-card h3 {
+    font-size: 1.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cv-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+}
+
+.cv-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* Contact Section */
 .contact {
-    background: var(--bg-white);
+    background: var(--bg-light);
 }
 
 .contact-card {
@@ -919,7 +966,8 @@ section {
         left: -2.5rem;
     }
 
-    .contact-card {
+    .contact-card,
+    .cv-card {
         padding: 2.5rem 1.5rem;
     }
 
