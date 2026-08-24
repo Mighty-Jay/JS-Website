@@ -24,7 +24,7 @@
     --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --gradient-4: linear-gradient(135deg, #ff00d0 0%, #0a74ff 100%);
     --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -191,7 +191,7 @@ body {
 .shape-2 {
     width: 400px;
     height: 400px;
-    background: linear-gradient(135deg, #f093fb, #f5576c);
+    background: linear-gradient(135deg, #0062ff, #ffc907);
     bottom: -10%;
     left: -5%;
     animation-delay: 5s;
@@ -250,14 +250,14 @@ body {
 }
 
 .gradient-text {
-    background: var(--gradient-1);
+    background: var(--gradient-3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .gradient-text-alt {
-    background: var(--gradient-2);
+    background: var(--gradient-4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -443,6 +443,14 @@ section {
 .about-card p {
     color: var(--text-light);
     line-height: 1.7;
+}
+
+.cv-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
 }
 
 /* Skills Section */
@@ -691,6 +699,7 @@ section {
 .gradient-2 { background: var(--gradient-2); }
 .gradient-3 { background: var(--gradient-3); }
 .gradient-4 { background: var(--gradient-4); }
+.gradient-5 { background: var(--gradient-5); }
 
 .project-content {
     padding: 2rem;
@@ -758,9 +767,55 @@ section {
     gap: 1rem;
 }
 
+/* CV Section */
+.cv {
+    background: var(--bg-white);
+}
+
+.cv-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--bg-light);
+    padding: 3.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.cv-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.cv-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cv-card h3 {
+    font-size: 1.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cv-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+}
+
+.cv-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* Contact Section */
 .contact {
-    background: var(--bg-white);
+    background: var(--bg-light);
 }
 
 .contact-card {
@@ -911,7 +966,8 @@ section {
         left: -2.5rem;
     }
 
-    .contact-card {
+    .contact-card,
+    .cv-card {
         padding: 2.5rem 1.5rem;
     }
 
