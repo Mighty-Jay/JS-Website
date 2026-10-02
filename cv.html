@@ -4,481 +4,503 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jacob Lewis Smith - CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --accent: #1f3a5f;
+            --text-dark: #111827;
+            --text-medium: #374151;
+            --text-light: #6b7280;
+            --rule: #d1d5db;
+            --rule-light: #e5e7eb;
+            --bg: #f3f4f6;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 850px;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .section {
-            margin-bottom: 35px;
-        }
-        
-        .section h2 {
-            color: #2c3e50;
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #3498db;
-            position: relative;
-        }
-        
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: #e74c3c;
-        }
-        
-        .professional-summary {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-        
-        .job {
-            margin-bottom: 30px;
-            padding: 20px;
-            border-radius: 8px;
-            background: #fafafa;
-            border-left: 4px solid #3498db;
-        }
-        
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .job-title {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        
-        .company {
-            color: #7f8c8d;
-            font-size: 1em;
-        }
-        
-        .date {
-            color: #e74c3c;
-            font-weight: 500;
-            font-size: 0.9em;
-        }
-        
-        .job ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .job li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .job li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #3498db;
-            font-weight: bold;
-        }
-        
-        .education-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .education-title {
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        
-        .qualifications {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .qualification {
-            background: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            border-left: 3px solid #3498db;
-            font-size: 0.9em;
-        }
-        
-        .volunteer-section {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #e74c3c;
-        }
-        
-        .volunteer-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .volunteer-title {
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        
-        .volunteer-company {
-            color: #7f8c8d;
-            font-size: 1em;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 0.875rem;
+            line-height: 1.55;
+            color: var(--text-medium);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .volunteer ul {
+        .page {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+            padding: 48px 56px;
+        }
+
+        .print-bar {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0 14px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .print-btn {
+            border: 1px solid var(--accent);
+            background: white;
+            color: var(--accent);
+            font-family: inherit;
+            font-weight: 500;
+            font-size: 0.8rem;
+            padding: 0.45rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .print-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin: -48px -56px 0;
+            padding: 32px 56px;
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .header img {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.8);
+            flex-shrink: 0;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .header h1 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 2.1rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .header .role {
+            font-size: 0.95rem;
+            font-weight: 500;
+            opacity: 0.9;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .contact-list {
             list-style: none;
-            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.82rem;
+            text-align: right;
+            color: rgba(255,255,255,0.92);
         }
-        
-        .volunteer li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
+
+        .contact-list a {
+            color: inherit;
+            text-decoration: none;
         }
-        
-        .volunteer li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #3498db;
-            font-weight: bold;
+
+        .contact-list a:hover {
+            color: white;
+            text-decoration: underline;
         }
-        
-        .references {
+
+        .summary {
+            font-size: 0.92rem;
+            color: var(--text-medium);
+            padding: 24px 0 4px;
+        }
+
+        .layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr 230px;
+            gap: 40px;
+            margin-top: 22px;
         }
-        
-        .reference {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
+
+        .block {
+            margin-bottom: 26px;
         }
-        
-        .reference h4 {
-            color: #2c3e50;
-            margin-bottom: 5px;
+
+        .block:last-child {
+            margin-bottom: 0;
         }
-        
-        .reference p {
-            color: #7f8c8d;
-            font-size: 0.9em;
+
+        h2 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .h2-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+            letter-spacing: 0;
+        }
+
+        .skills {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 0.83rem;
+        }
+
+        .edu-item {
+            margin-bottom: 14px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+        }
+
+        .edu-meta {
+            font-size: 0.78rem;
+            color: var(--text-light);
             margin-bottom: 3px;
         }
 
-        .profile-pic {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 15px;
+        .edu-quals {
+            font-size: 0.8rem;
+            color: var(--text-medium);
         }
 
-        .profile-pic img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid white;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        .grades {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-size: 0.8rem;
+            margin-top: 4px;
         }
-        
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .job-header {
-                flex-direction: column;
-            }
-            
-            .education-header {
-                flex-direction: column;
-            }
-            
-            .volunteer-header {
-                flex-direction: column;
-            }
-            
-            .qualifications {
-                grid-template-columns: 1fr;
-            }
+
+        .grades li {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .grades li span:last-child {
+            font-weight: 600;
+            color: var(--text-dark);
+            white-space: nowrap;
+        }
+
+        .ref-item {
+            font-size: 0.8rem;
+            margin-bottom: 14px;
+            word-break: break-word;
+        }
+
+        .ref-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .ref-item strong {
+            display: block;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .ref-role {
+            color: var(--text-light);
+        }
+
+        .job {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--rule-light);
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .job-date {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-light);
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .job-company {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .job ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .job li {
+            font-size: 0.85rem;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .job li::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 0.62em;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--text-light);
+        }
+
+        @media (max-width: 720px) {
+            .print-bar { padding: 12px 16px; }
+            .page { padding: 28px 20px; margin: 0; box-shadow: none; }
+            .header { flex-wrap: wrap; margin: -28px -20px 0; padding: 24px 20px; }
+            .header img { width: 68px; height: 68px; }
+            .header h1 { font-size: 1.6rem; }
+            .contact-list { text-align: left; width: 100%; }
+            .layout { grid-template-columns: 1fr; gap: 28px; }
+        }
+
+        @page {
+            size: A4;
+            margin: 14mm 14mm;
+        }
+
+        @media print {
+            body { background: white; font-size: 0.82rem; }
+            .print-bar { display: none; }
+            .page { box-shadow: none; margin: 0; padding: 0; max-width: 100%; }
+            .page { padding: 0; }
+            .header { margin: 0 0 0; }
+            .header, h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .job, .edu-item, .ref-item { break-inside: avoid; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="profile-pic">
-                <img src="/images/profile-pic.jpg" alt="Jacob Lewis Smith">
-             </div>
-            <h1>Jacob Lewis Smith</h1>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span>Werrington, Peterborough</span>
-                </div>
-                <div class="contact-item">
-                    <span>📱</span>
-                    <a href="tel:07484635334" style="text-decoration: none; color: inherit;">07484 635334</a>
-                </div>
-                <div class="contact-item">
-                    <span>✉️</span>
-                    <a href="mailto:work@jacob-s.co.uk" style="text-decoration: none; color: inherit;">work@jacob-s.co.uk</a>
-                </div>
+    <div class="print-bar">
+        <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <div class="page">
+        <header class="header">
+            <img src="/images/profile-pic.jpg" alt="Jacob Lewis Smith">
+            <div class="header-text">
+                <h1>Jacob Lewis Smith</h1>
+                <div class="role">Systems Administrator</div>
             </div>
-        </div>
-        
-        <div class="content">
-            <div class="professional-summary">
-                I am a very flexible, hardworking, and conscientious person. I work very well on my own and as part of a team.
-            </div>
-            
-            <div class="section">
-                <h2>Professional Experience</h2>
-                
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">IT Infrastructure Analyst</div>
-                            <div class="company">General & Medical Healthcare</div>
+            <ul class="contact-list">
+                <li>📍 Chesterfield, Derbyshire</li>
+                <li>📱 <a href="tel:07484635334">07484 635334</a></li>
+                <li>✉️ <a href="mailto:work@jacob-s.co.uk">work@jacob-s.co.uk</a></li>
+            </ul>
+        </header>
+
+        <p class="summary">I am a flexible, hardworking and conscientious IT professional with a strong track record across infrastructure, service desk and end-user support. I work equally well independently or as part of a team.</p>
+
+        <div class="layout">
+            <main class="main">
+                <div class="block">
+                    <h2><span class="h2-icon">💼</span>Professional Experience</h2>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Systems Administrator</span>
+                            <span class="job-date">Oct 2025 – Present</span>
                         </div>
-                        <div class="date">May 2023 – Present</div>
+                        <div class="job-company">Aston Community Education Trust</div>
+                        <ul>
+                            <li>Line manage a team of ICT technicians at one of the trust's sites, acting as the escalation point for the Trust IT Services Team.</li>
+                            <li>Develop, deploy and maintain trust-wide IT infrastructure, including networking, Hyper-V, VoIP telephony and cloud-based systems.</li>
+                            <li>Lead the adoption and progression of trust cloud services, including Microsoft 365, Google Workspace and Chromebooks/ChromeOS.</li>
+                            <li>Deliver IT projects to completion on behalf of the ACET Network Leader and Deputy Network Leader.</li>
+                            <li>Manage systems for compliance with the trust's Disaster Recovery Policy, GDPR and Data Protection requirements.</li>
+                            <li>Develop custom tools/software for internal use and automation within the IT Team.</li>
+                            <li>Advise on emerging hardware, software and security developments, and liaise with third parties on service updates and warranty work.</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>Experienced in Office 365 Administration and tenant management, including Microsoft Teams and Zoom user support.</li>
-                        <li>Proficient in Active Directory, DNS, DHCP and on-premises Exchange server support.</li>
-                        <li>Skilled in comprehensive server hardware and software support, with extensive experience in VMware ESXi/vSphere and Hyper-V virtual machine management.</li>
-                        <li>Managed Sense call recording software for secure storage and encryption of call recordings.</li>
-                        <li>Experienced in telecommunications system installation and management, including 3CX and Splicecom phone systems.</li>
-                        <li>Proficient in PowerShell scripting and process automation to streamline IT operations.</li>
-                        <li>Delivered multi-tier support (1st, 2nd, and 3rd line) to users across multiple office locations (London, Guernsey, and Pilton), including on-site visits for complex IT and technical issues.</li>
-                        <li>Led all IT project initiatives, including major system upgrades, in-house development support, technical maintenance, and equipment refreshes aligned with business requirements.</li>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">IT Infrastructure Analyst</span>
+                            <span class="job-date">May 2023 – October 2025</span>
+                        </div>
+                        <div class="job-company">General &amp; Medical Healthcare</div>
+                        <ul>
+                            <li>Administer Office 365 tenant, Active Directory, DNS/DHCP and on-prem Exchange.</li>
+                            <li>Manage server infrastructure including VMware ESXi/vSphere and Hyper-V virtual machines.</li>
+                            <li>Support 3CX and Splicecom telephony, plus Sense call recording and encryption.</li>
+                            <li>Automate IT operations with PowerShell; deliver 1st–3rd line support across London, Guernsey and Pilton sites.</li>
+                            <li>Assist development team with IT-related tasks and projects, including automation and scripting.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Senior IT Technician</span>
+                            <span class="job-date">Aug 2020 – May 2023</span>
+                        </div>
+                        <div class="job-company">Ken Stimpson Academy</div>
+                        <ul>
+                            <li>Managed Google Admin, Azure AD/Intune/SharePoint and on-prem Exchange for the school.</li>
+                            <li>Ran server hardware, Active Directory and VMware ESXi/vSphere clusters; maintained Smoothwall filtering and Avigilon CCTV.</li>
+                            <li>Delivered site-wide networking (VLANs, DHCP, DNS) and 3CX phone system support.</li>
+                            <li>Provided 1st–3rd line support to students, staff and governors; deputised for the Technical Services Manager.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">1st Line Service Desk Analyst</span>
+                            <span class="job-date">Jan 2020 – Aug 2020</span>
+                        </div>
+                        <div class="job-company">Interaction Recruitment (at CDW – Travelodge Service Desk)</div>
+                        <ul>
+                            <li>Administered Google Admin/Active Directory and supported Travelodge's Opera Reservation System.</li>
+                            <li>Used SOTI MobiControl and Citrix virtual desktops/Jabbra phones for first-line resolution.</li>
+                            <li>Delivered 1st line support to Travelodge staff and franchisees across the UK, Ireland and Spain.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Apprentice IT Technician</span>
+                            <span class="job-date">Jul 2018 – Dec 2019</span>
+                        </div>
+                        <div class="job-company">Jack Hunt School · Level 3 Infrastructure Technician</div>
+                        <ul>
+                            <li>Supported Active Directory, NetSupport and Office 365 for students and staff.</li>
+                            <li>Delivered onsite 1st & 2nd line support to students and staff.</li>
+                            <li>Represented the IT department in meetings with students, staff and governors.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+            <aside class="sidebar">
+                <div class="block">
+                    <h2><span class="h2-icon">🛠️</span>Core Skills</h2>
+                    <ul class="skills">
+                        <li>Office 365 / Azure AD</li>
+                        <li>Chromebooks/ChromeOS/Google Admin</li>
+                        <li>Active Directory</li>
+                        <li>VMware ESXi</li>
+                        <li>Hyper-V</li>
+                        <li>PowerShell/Scripting</li>
+                        <li>Networking (DNS/DHCP)</li>
+                        <li>IP Telephony</li>
+                        <li>1st–3rd Line Support</li>
                     </ul>
                 </div>
-                
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Senior IT Technician</div>
-                            <div class="company">Ken Simpson Community School (Now Ken Stimpson Academy)</div>
+
+                <div class="block">
+                    <h2><span class="h2-icon">🎓</span>Education</h2>
+                    <div class="edu-item">
+                        <div class="edu-title">Ken Stimpson Academy</div>
+                        <div class="edu-meta">2012 – 2018</div>
+                        <ul class="grades">
+                            <li><span>Computer Science</span><span>A</span></li>
+                            <li><span>Maths</span><span>4 (C)</span></li>
+                            <li><span>English Literature</span><span>6 (B)</span></li>
+                            <li><span>English Language</span><span>5 (C)</span></li>
+                            <li><span>Science</span><span>C</span></li>
+                            <li><span>Additional Science</span><span>C</span></li>
+                            <li><span>Drama</span><span>B</span></li>
+                            <li><span>Geography</span><span>C</span></li>
+                            <li><span>ECDL (IT)</span><span>Distinction*</span></li>
+                        </ul>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">RSL Creative &amp; Performing Arts</div>
+                        <div class="edu-meta">2017 – 2018</div>
+                        <div class="edu-quals">Merit – Technical Aspects (Sound &amp; Lighting)</div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <h2><span class="h2-icon">🎭</span>Volunteer</h2>
+                    <div class="edu-item">
+                        <div class="edu-title">Lighting, Sound &amp; Stage Crew Technician</div>
+                        <div class="edu-meta">Stamford Corn Exchange Theatre · Sep 2015 – Dec 2025
                         </div>
-                        <div class="date">August 2020 – May 2023</div>
-                    </div>
-                    <ul>
-                        <li>Experienced in Google Admin for Chromebook management and Office 365 administration using Azure Active Directory, Intune, Teams, Exchange, and SharePoint.</li>
-                        <li>Proficient in server hardware support, Active Directory, on-prem Exchange support, and VMware ESXI/vSphere cluster management.</li>
-                        <li>Managed and maintained Smoothwall Cloud Filter and Aviglon CCTV systems.</li>
-                        <li>Skilled in installing, upgrading, configuring, and supporting hardware/software, as well as site-wide networking (VLAN configurations, DHCP, and DNS management).</li>
-                        <li>Experienced in 3CX phone system management and setup.</li>
-                        <li>Provided 1st, 2nd, and 3rd line support to a diverse user base (students, teachers, management, and governors), ensuring resolution of software and hardware issues.</li>
-                        <li>Led team management in the absence of the Technical Services Manager, including task delegation and technician coordination.</li>
-                        <li>Involved in various IT projects, including IT suite upgrades, core network replacement, and server replacements, with responsibilities for equipment installation, setup, and configuration.</li>
-                        <li>Provided out-of-hours event support for school functions, including AV setup for microphones, lighting, and projector systems.</li>
-                    </ul>
-                </div>
-                
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">1st Line Service Desk Analyst</div>
-                            <div class="company">Interaction Recruitment – Working at CDW - Travelodge Service Desk</div>
-                        </div>
-                        <div class="date">January 2020 – August 2020</div>
-                    </div>
-                    <ul>
-                        <li>Experienced in Google Admin and Active Directory administration for users and computers across the Travelodge business.</li>
-                        <li>Proficient in SOTI MobiControl (similar to Cisco Meraki) and full use of Citrix environments, including virtual desktops and Cisco Jabba virtual phones.</li>
-                        <li>Administered multiple in-house systems, including Travelodge's Opera Reservation System (ORS).</li>
-                        <li>Provided first-line, high-quality support to Travelodge staff, ensuring effective issue resolution through the Service Desk.</li>
-                        <li>Undertook project tasks to enhance productivity and workflow, including system development for team knowledge and independence, and maintained up-to-date documentation for all business processes.</li>
-                        <li>Part of the training team, responsible for onboarding and training new starters to become fully competent Service Desk Analysts, utilizing a training program developed and implemented personally.</li>
-                    </ul>
-                </div>
-                
-                <div class="job">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Apprentice IT Technician</div>
-                            <div class="company">Jack Hunt School</div>
-                        </div>
-                        <div class="date">July 2018 – December 2019</div>
-                    </div>
-                    <p style="margin-bottom: 15px; font-style: italic;">Worked towards Level 3 Infrastructure Technician</p>
-                    <ul>
-                        <li>Experienced in Active Directory (AD), NetSupport (DNA, Tech Console, Help Desk), and Office 365 administration and applications.</li>
-                        <li>Basic knowledge of System Center Configuration Manager (SCCM) and Hyper-V.</li>
-                        <li>Provided 1st line IT support to students and staff, managing phone queries and email support requests.</li>
-                        <li>Collaborated on IT projects to enhance existing systems and develop new solutions, improving IT efficiency for administrative users and teachers.</li>
-                        <li>Assisted the Audio and Visual technician with event setups, including sound, lighting, and projection for school musicals and sports awards conferences.</li>
-                        <li>Managed apprenticeship projects and tasks, ensuring high-quality work submission before deadlines.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>Education</h2>
-                
-                <div class="education-item">
-                    <div class="education-header">
-                        <div class="education-title">Ken Simpson Community School (Now Ken Stimpson Academy)</div>
-                        <div class="date">September 2012 – June 2018</div>
-                    </div>
-                    
-                    <div class="qualifications">
-                        <div class="qualification">Computer Science – A</div>
-                        <div class="qualification">Maths – 4 (Equiv to C)</div>
-                        <div class="qualification">English Lit – 6 (Equiv to B)</div>
-                        <div class="qualification">English Lang – 5 (Equiv to C)</div>
-                        <div class="qualification">Science – C</div>
-                        <div class="qualification">Additional Science – C</div>
-                        <div class="qualification">Drama – B</div>
-                        <div class="qualification">Geography – C</div>
-                        <div class="qualification">ECDL (IT) – Distinction*</div>
+                        <div class="edu-quals">Stage management, lighting &amp; sound for shows; equipment upkeep between performances.</div>
                     </div>
                 </div>
-                
-                <div class="education-item">
-                    <div class="education-header">
-                        <div class="education-title">RSL Creative and Performing Arts</div>
-                        <div class="date">September 2017 – June 2018</div>
-                        <div style="color: #7f8c8d; font-size: 1em;">Merit in Creative and Performing Arts Specialising in Technical Aspects (Sound and Lighting)</div>
+
+                <div class="block">
+                    <h2><span class="h2-icon">🤝</span>References</h2>
+                    <div class="ref-item">
+                        <strong>Lee Chambers</strong>
+                        <span class="ref-role">Technical Services Manager, Ken Stimpson Academy</span><br>
+                        01733 765 950 · L.Chambers@kenstimpson.org.uk
+                    </div>
+                    <div class="ref-item">
+                        <strong>Ben Dearden</strong>
+                        <strong>(Personal Reference)</strong>
+                        <span class="ref-role">Aircraft Maintenance Technician</span><br>
+                        Bdearden5612@gmail.com
                     </div>
                 </div>
-            </div>
-            
-            <div class="section">
-                <h2>Volunteer Experience</h2>
-                
-                <div class="volunteer-section volunteer">
-                    <div class="volunteer-header">
-                        <div>
-                            <div class="volunteer-title">Volunteer Lighting/Sound and Stage Crew Technician</div>
-                            <div class="volunteer-company">Stamford Corn Exchange Theatre</div>
-                        </div>
-                        <div class="date">September 2015 – Present</div>
-                    </div>
-                    <ul>
-                        <li>Volunteered in various technical roles, including Stage Management, Lighting, and Sound Technician, ensuring the smooth operation of shows and events.</li>
-                        <li>Responsible for Health and Safety of all personnel and audience members within the theatre.</li>
-                        <li>Managed lighting setup and focusing to meet performer or band requirements, while maintaining balanced and clear sound through front-of-house Array speakers.</li>
-                        <li>Part of the maintenance team, performing upkeep on lighting, sound equipment, and building systems during downtime between shows.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>References</h2>
-                
-                <div class="references">
-                    <div class="reference">
-                        <h4>Workplace Reference</h4>
-                        <p><strong>Lee Chambers</strong></p>
-                        <p>Technical Services Manager</p>
-                        <p>Ken Stimpson Academy</p>
-                        <p>Staniland Way, Werrington, Peterborough PE3 9PY</p>
-                        <p>📞 01733 765 950</p>
-                        <p>✉️ L.Chambers@kenstimpson.org.uk</p>
-                    </div>
-                    
-                    <div class="reference">
-                        <h4>Personal Reference</h4>
-                        <p><strong>Ben Dearden</strong></p>
-                        <p>Aircraft Maintenance Technician</p>
-                        <p>57 Shrewsbury Road, Bracebridge Heath, Lincoln, LN4 2GU</p>
-                        <p>✉️ Bdearden5612@gmail.com</p>
-                    </div>
-                </div>
-            </div>
+            </aside>
         </div>
     </div>
 </body>
