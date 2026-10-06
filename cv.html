@@ -321,17 +321,32 @@
 
         @page {
             size: A4;
-            margin: 14mm 14mm;
+            margin: 10mm 12mm;
+            /* Defining margin boxes stops Chrome adding its own date/title/URL header & footer */
+            @top-center { content: ""; }
+            @bottom-center { content: ""; }
         }
 
         @media print {
-            body { background: white; font-size: 0.82rem; }
+            html { font-size: 13px; }
+            body { background: white; }
             .print-bar { display: none; }
             .page { box-shadow: none; margin: 0; padding: 0; max-width: 100%; }
-            .page { padding: 0; }
-            .header { margin: 0 0 0; }
+            .header { margin: 0; padding: 18px 24px; gap: 18px; }
+            .header img { width: 64px; height: 64px; }
+            .header h1 { font-size: 1.8rem; }
             .header, h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .job, .edu-item, .ref-item { break-inside: avoid; }
+            .summary { padding: 14px 0 0; }
+            .layout { grid-template-columns: 1fr 200px; gap: 28px; margin-top: 16px; }
+            .block { margin-bottom: 18px; }
+            h2 { margin-bottom: 10px; }
+            .job { margin-bottom: 12px; padding-bottom: 12px; }
+            .job-company { margin-bottom: 5px; }
+            .job ul { gap: 2px; }
+            .edu-item, .ref-item { margin-bottom: 10px; }
+            /* Let jobs split across pages, but keep a job's title with its first bullet */
+            .job-header, .job-company, h2 { break-after: avoid; }
+            .job li, .edu-item, .ref-item { break-inside: avoid; }
         }
     </style>
 </head>
