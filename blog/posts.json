@@ -1,0 +1,9 @@
+[
+    {
+        "slug": "hello-world",
+        "title": "Hello, World",
+        "date": "2026-10-09",
+        "summary": "Why I've started writing here, and what to expect from this blog.",
+        "tags": ["Personal"]
+    }
+]
